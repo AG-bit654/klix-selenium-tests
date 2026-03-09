@@ -52,5 +52,11 @@ namespace vjezba
             driver.FindElement(By.LinkText("Vijesti")).Click();
             Thread.Sleep(1000);
         }
+        public void KlikniNaBiznis()
+        {
+            wait.Until(d => d.FindElement(By.LinkText("Biznis")).Displayed);
+            driver.FindElement(By.LinkText("Biznis")).Click();
+            Thread.Sleep(1000);
+        }
     }
 }
