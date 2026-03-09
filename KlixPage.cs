@@ -58,5 +58,11 @@ namespace vjezba
             driver.FindElement(By.LinkText("Biznis")).Click();
             Thread.Sleep(1000);
         }
+        public void KlikniNaSport ()
+        {
+            wait.Until(d => d.FindElement(By.LinkText("Sport")).Displayed);
+            driver.FindElement(By.LinkText("Sport")).Click();
+            Thread.Sleep(1000);
+        }
     }
 }

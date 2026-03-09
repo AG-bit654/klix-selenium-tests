@@ -58,5 +58,16 @@ namespace vjezba
             Console.WriteLine(Driver.Instance.Url);
             Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("Biznis"), "Pretraga nije radila!");
         }
+        [TestMethod]
+        public void Test5_KlikniNaSport ()
+        {
+            Assert.IsNotNull(Driver.Instance, "Driver nije inicijaliziran!");
+            KlixPage klix = new KlixPage(Driver.Instance);
+            klix.Otvori();
+            klix.KlikniNaSport();
+            Thread.Sleep(3000);
+            Console.WriteLine(Driver.Instance.Url);
+            Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("Sport"), "Pretraga nije radila!");
+        }
     }
 }
