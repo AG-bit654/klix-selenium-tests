@@ -13,11 +13,15 @@ namespace vjezba
             var options = new ChromeOptions();
             // Dodajemo ove dvije linije da zaobiđemo probleme sa sistemom
             options.AddArgument("--remote-allow-origins=*");
+            options.AddArgument("--disable-notifications");
+            options.AddArgument("--blink-settings=imagesEnabled=false");
+            
             
             // Inicijalizacija bez ikakvih putanja - Selenium 4.24 će sam uraditi ostalo
             Instance = new ChromeDriver(options);
             Instance.Manage().Window.Maximize();
-            Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(5);
+            Instance.Manage().Timeouts().PageLoad = TimeSpan.FromSeconds(60);
+            Instance.Manage().Timeouts().ImplicitWait = TimeSpan.FromSeconds(10);
         }
 
         public static void Close()

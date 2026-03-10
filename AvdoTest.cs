@@ -42,8 +42,9 @@ namespace vjezba
             Assert.IsNotNull(Driver.Instance, "Driver nije inicijaliziran!");
             KlixPage klix = new KlixPage(Driver.Instance);
             klix.Otvori();
-            klix.KlikniNaVijesti();
             Thread.Sleep(3000);
+            klix.KlikniNaVijesti();
+            
             Console.WriteLine(Driver.Instance.Url);
             Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("vijesti"), "Pretraga nije radila!");
         }
@@ -53,10 +54,11 @@ namespace vjezba
             Assert.IsNotNull(Driver.Instance, "Driver nije inicijaliziran!");
             KlixPage klix = new KlixPage(Driver.Instance);
             klix.Otvori();
-            klix.KlikniNaBiznis();
             Thread.Sleep(3000);
+            klix.KlikniNaBiznis();
+            
             Console.WriteLine(Driver.Instance.Url);
-            Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("Biznis"), "Pretraga nije radila!");
+            Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("biznis"), "Pretraga nije radila!");
         }
         [TestMethod]
         public void Test5_KlikniNaSport ()
@@ -64,10 +66,11 @@ namespace vjezba
             Assert.IsNotNull(Driver.Instance, "Driver nije inicijaliziran!");
             KlixPage klix = new KlixPage(Driver.Instance);
             klix.Otvori();
-            klix.KlikniNaSport();
             Thread.Sleep(3000);
+            klix.KlikniNaSport();
+            
             Console.WriteLine(Driver.Instance.Url);
-            Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("Sport"), "Pretraga nije radila!");
+            Assert.IsTrue(Driver.Instance.Url.ToLower().Contains("sport"), "Pretraga nije radila!");
         }
     }
 }

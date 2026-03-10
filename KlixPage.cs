@@ -49,20 +49,27 @@ namespace vjezba
         public void KlikniNaVijesti()
         {
             wait.Until(d => d.FindElement(By.LinkText("Vijesti")).Displayed);
+        
             driver.FindElement(By.LinkText("Vijesti")).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
         }
+
+
         public void KlikniNaBiznis()
         {
             wait.Until(d => d.FindElement(By.LinkText("Biznis")).Displayed);
+            
             driver.FindElement(By.LinkText("Biznis")).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
         }
         public void KlikniNaSport ()
         {
             wait.Until(d => d.FindElement(By.LinkText("Sport")).Displayed);
+            
             driver.FindElement(By.LinkText("Sport")).Click();
-            Thread.Sleep(1000);
+            Thread.Sleep(5000);
         }
-    }
+        
+    
+}
 }
